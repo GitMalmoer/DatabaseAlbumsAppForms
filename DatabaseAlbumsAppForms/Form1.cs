@@ -33,7 +33,7 @@ namespace DatabaseAlbumsAppForms
         private void dataGridAlbums_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dataGridView = (DataGridView)sender;
-            AlbumDAO albumDAO = new AlbumDAO();
+            
 
             
 
@@ -45,7 +45,7 @@ namespace DatabaseAlbumsAppForms
 
             int rowID = int.Parse(dataGridView.Rows[rowClicked].Cells[0].Value.ToString());
 
-            tracksBindingSource.DataSource = albumDAO.LoadTracksUsingJoin(rowID);
+            tracksBindingSource.DataSource = albums[rowClicked].Tracks;
             dataGridTracks.DataSource = tracksBindingSource;
 
 
